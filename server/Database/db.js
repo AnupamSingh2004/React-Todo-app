@@ -1,12 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const TodosSchema = new mongoose.Schema({
-    todos:String,
-})
+  todo: {
+    type: String,
+    required: true,
+  },
+});
 
-const Todos = mongoose.model('Todos',TodosSchema);
+const Todos = mongoose.model("Todos", TodosSchema);
 
 module.exports = {
-    Todos
-}
-
+  Todos,
+};

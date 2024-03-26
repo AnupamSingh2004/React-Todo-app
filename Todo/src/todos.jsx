@@ -3,19 +3,6 @@ import { useEffect, useState } from "react";
 
 function Todos() {
 
-  const [message, setMessage] = useState("");
-  useEffect(() => {
-    async function getTodos() {
-      const res = await fetch("http://localhost:3000/api/todos");
-      const todos = await res.json();
-
-      setMessage(todos.mssg);
-
-      // console.log(todos);
-    }
-
-    getTodos();
-  }, []);
   return (
     <div>
       <Todocard />
