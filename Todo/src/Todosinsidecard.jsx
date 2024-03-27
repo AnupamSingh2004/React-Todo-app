@@ -23,7 +23,7 @@ function CheckedText({text,done}){
 // eslint-disable-next-line react/prop-types
 function Todoincard({ text ,id,setUpdateUI,handleChange,done}) {
     const deleteTodo = ()=>{
-        axios.delete(`http://localhost:3000/api/todos/${id}`).then(res=>{
+        axios.delete(`https://todo-app-backend-rust.vercel.app/api/todos/${id}`).then(res=>{
             console.log(res.data);
             setUpdateUI((prevState)=>!prevState);
         })

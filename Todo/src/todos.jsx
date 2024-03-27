@@ -21,7 +21,7 @@ function Todocard() {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/todosget`).then((res)=>{
+    axios.get(`https://todo-app-backend-rust.vercel.app/api/todosget`).then((res)=>{
       setToDos(res.data);
     }).catch((err)=>{
       console.log(err);
@@ -30,7 +30,7 @@ function Todocard() {
 
   const addTodo = (e)=>{
     if (input){
-      axios.post(`http://localhost:3000/api/todossave`,{todo:input,done:false}).then((res)=>{
+      axios.post(`https://todo-app-backend-rust.vercel.app/api/todossave`,{todo:input,done:false}).then((res)=>{
         console.log(res.data);
         setUpdateUI((prevState)=>!prevState);
         setInput("");
@@ -43,7 +43,7 @@ function Todocard() {
 
   const handleCheckedChange =(id)=>{
 
-  axios.put(`http://localhost:3000/api/todos/${id}`).then(
+  axios.put(`https://todo-app-backend-rust.vercel.app/api/todos/${id}`).then(
     (res)=>{
       console.log(res.data)}).catch((err)=>{
     console.log(err)});
