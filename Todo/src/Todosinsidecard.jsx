@@ -20,9 +20,6 @@ function CheckedText({text,done}){
 
     </>
 }
-
-
-
 // eslint-disable-next-line react/prop-types
 function Todoincard({ text ,id,setUpdateUI,handleChange,done}) {
     const deleteTodo = ()=>{
@@ -45,20 +42,17 @@ function Todoincard({ text ,id,setUpdateUI,handleChange,done}) {
                     <div className={"flex justify-center items-center pr-1 hover:cursor-pointer"}>
                         <FontAwesomeIcon icon={faAnglesRight} className={"flex justify-center items-center text-xl"}/>
                     </div>
-
-                    {/*<div className={"flex-1 gap-3 items-center "}>*/}
-                    {/*    <h1 className={"pt-1 pl-2 pb-1  "}> {text}</h1>*/}
-                    {/*</div>*/}
+                    
                     <CheckedText text={text} done={done}/>
 
                     <div className={"flex space-x-2 items-center"}>
+
                         <div className={"flex justify-center"}>
                             {/*<button>done</button>*/}
 
                             <FontAwesomeIcon icon={faCheck} className={"p-2 pr-3 pl-4 text-buttoncolor hover:text-black fill-current text-2.5xl hover:cursor-pointer "}
-                               onClick={()=>{handleChange(id)}}
+                                             onClick={()=>{handleChange(id)}}
                             />
-
                         </div>
 
                         <div>
@@ -72,8 +66,4 @@ function Todoincard({ text ,id,setUpdateUI,handleChange,done}) {
         </>
     );
 }
-
-// eslint-disable-next-line react/prop-types
-
-
 export default Todoincard;
