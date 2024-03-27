@@ -8,3 +8,11 @@ body{
 
 
 }
+
+@media (max-width: 540px) {
+    body {
+        background: rgb(109,196,249);
+        /*background: linear-gradient(90deg, rgb(148, 232, 228) 0%, rgb(127, 176, 238) 50%, rgb(51, 174, 200) 100%);*/
+
+    }
+}
