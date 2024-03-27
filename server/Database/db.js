@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 
 const TodosSchema = new mongoose.Schema({
-  todo: {
-    type: String,
-    required: true,
+  todo: String,
+  done: {
+    type: Boolean,
+    default: false,
   },
 });
 

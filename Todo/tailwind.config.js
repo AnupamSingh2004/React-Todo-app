@@ -16,6 +16,9 @@ export default {
       buttoncolor:'rgb(94,167,213)',
       buttonhover:'rgb(58,123,163)',
       bac1:'rgb(245,240,240)',
+      deleteicon:'rgb(245,88,88)',
+      deleteiconhover:'rgb(169,36,36)',
+      black:'rgb(0,0,0)'
     },
     screens: {
       'sm': '576px',
@@ -23,6 +26,9 @@ export default {
       'lg': '1440px',
     },
     extend: {},
+    fontFamily:{
+      poppins:'Poppins'
+    }
   },
   plugins: [
     require('tailwindcss-filters'),

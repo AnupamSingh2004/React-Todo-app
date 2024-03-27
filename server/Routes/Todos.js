@@ -12,9 +12,13 @@ router.get("/todosget", async (req, res) => {
 router.post("/todossave", async (req, res) => {
   const toDo = req.body;
 
-  const todosave = new Todos(toDo);
-  todosave.save();
-  res.send(todosave);
+  if (toDo) {
+    const todosave = new Todos(toDo);
+    todosave.save();
+    res.send(todosave);
+  } else {
+    console.log("No todo");
+  }
 });
 
 router.delete("/todos/:id", async (req, res) => {
@@ -31,11 +35,10 @@ router.delete("/todos/:id", async (req, res) => {
 });
 
 router.put("/todos/:id", async (req, res) => {
-  const id = req.params;
-  const toDo = req.body;
+  const { id } = req.params;
 
-  Todos.findByIdAndUpdate(id, { toDo }).then(() => {
-    res.send("Updated succesfully...");
+  Todos.findByIdAndUpdate(id, { done: true }).then((res) => {
+    res.toJSON(res);
   });
 });
 
