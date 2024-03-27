@@ -1,15 +1,10 @@
 import axios from "axios";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAnglesRight, faCheck, faTrash} from "@fortawesome/free-solid-svg-icons";
-import {useEffect, useState} from "react";
-import todos from "./todos.jsx";
+
 
 // eslint-disable-next-line react/prop-types
 function CheckedText({text,done}){
-
-    console.log(done);
-    // isChecked = 0;
-
     if (done){
         return <>
             <div className={"flex-1 gap-3 items-center "}>
@@ -30,9 +25,6 @@ function CheckedText({text,done}){
 
 // eslint-disable-next-line react/prop-types
 function Todoincard({ text ,id,setUpdateUI,handleChange,done}) {
-
-
-
     const deleteTodo = ()=>{
         axios.delete(`http://localhost:3000/api/todos/${id}`).then(res=>{
             console.log(res.data);

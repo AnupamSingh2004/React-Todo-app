@@ -23,7 +23,6 @@ function Todocard() {
   useEffect(() => {
     axios.get(`http://localhost:3000/api/todosget`).then((res)=>{
       setToDos(res.data);
-      // console.log(res.data);
     }).catch((err)=>{
       console.log(err);
     })
@@ -51,8 +50,6 @@ function Todocard() {
 
     setUpdateUI((prevState)=>!prevState);
     window.location.reload();
-
-
   }
 
   return (
